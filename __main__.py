@@ -33,7 +33,6 @@ def merge(im1, im2, maxsize_w, maxsize_h):
     else:
         pos = (pos[0],pos[1]+oldp+derb)
     oldp = im2.getbbox()[3]
-    #print(pos)
 
     im = Image.new("RGBA", (w, h))
     im.paste(im1)
@@ -41,16 +40,13 @@ def merge(im1, im2, maxsize_w, maxsize_h):
 
     return True, im
 
-#im.size
 def createIMG(img=Image.new("RGBA", (1, 1))):
     kf = 0
     global pos, oldp
     for f in os.listdir("docs"):
         sticker_path = f"docs/{f}"
-        #sticker_path2 = f"done/{f.split('.')}.png"
         im = Image.open(sticker_path)
         status, img = merge(img, im.crop(im.getbbox()), 3508, 2480)
-        #print(status)
         if status == None:
             img.save(f"done/final_{kf}.png")
             img=Image.new("RGBA", (1, 1))
@@ -60,11 +56,15 @@ def createIMG(img=Image.new("RGBA", (1, 1))):
 
             im = Image.open(sticker_path)
             status, img = merge(img, im.crop(im.getbbox()), 3508, 2480)
-            #return
     img.save(f"done/final_{kf}.png")
 
 
 def main():
+    for dir in ["done", "docs"]:
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+    
+
     executor.start_polling(dp)
 
 if __name__ == "__main__":
