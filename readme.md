@@ -14,6 +14,7 @@ TOKEN = "" #Telegram bot token
 
 ## Usage:
 
+* start start.bat for create venv and start bot
 * Send stickers to bot
 * Send /img command to bot
 * Check dir "done"
