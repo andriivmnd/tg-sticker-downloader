@@ -1,2 +1,5 @@
-/venv
-/done
+venv
+done/*
+docs/*
+config.py
+__pycache__

@@ -2,11 +2,9 @@ import os, sys
 from time import sleep
 from aiogram import Bot, Dispatcher, types, executor
 from PIL import Image
+import config
 
-#token = "5756131880:AAGSFejvRYYPlB5BjYpRUxfmbQ7RQ0eDMZg"
-token = "5558269654:AAF9qKIrQp017mCTew6kxpsOMQB21xdnscw"
-
-bot = Bot(token=token)
+bot = Bot(token=config.TOKEN)
 dp = Dispatcher(bot=bot)
 
 @dp.message_handler()
