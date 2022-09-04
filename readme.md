@@ -6,7 +6,7 @@ This script allows you to download stickers from Telegram by sending them to a b
 ## Installation:
 
 * Download this repository
-* Add config file(config.py):
+* Add file config.py:
 
 ```config.py
 TOKEN = "" #Telegram bot token
